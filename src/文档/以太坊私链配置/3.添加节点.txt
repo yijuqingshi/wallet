@@ -1,0 +1,23 @@
+﻿创世区块之后，启动Geth节点。
+
+查看节点信息
+admin.nodeInfo.enode
+
+一、动态添加节点
+1、在控制台执行：
+admin.addPeer("enode://293b1b18aeed7279be9d0104acf078ff022693d37aa6975532763312c93b026c0664416ed40acc921e86d4b70bc4771b5d0519d92871e25d05fa60ad3d14a99a@192.168.0.151:30303")
+
+
+这样就把服务器节点添加到了本地。这样添加的节点是不会自动保存的，也就是每次重启geth后需要再次手动重复上述步骤添加节点。
+用 admin.peer 查看是否添加成功
+
+
+二、静态节点
+1、将节点信息添加到数组中(多个节点用逗号隔开)
+["enode://8a76236cf637c2343d3a6553138d526372e1ec64de19added5cf9e1c611efb37c76e37c8ca0bccf47c1c33280ed602e212a7560557536ba03ab1c65f20858b32@172.16.86.200:30303"]
+
+2、将数组保存到static-nodes.json文件
+3、将json文件保存到以太坊链所在的目录
+比如：/home/deepin/Development/Ethereum/blockchain/server/static-nodes.json
+static-nodes.json问价与chaindata文件夹在同一级目录。
+4、配置完毕后，重新启动geth，此时会自动链接上述静态节点。

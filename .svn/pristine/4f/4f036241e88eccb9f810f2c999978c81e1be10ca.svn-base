@@ -1,0 +1,1 @@
+geth --datadir ./ --rpc --rpccorsdomain "*" --rpcvhosts * --rpcapi personal,db,eth,net,web3 --nodiscover  --targetgaslimit 7800000 --networkid 2018 console
